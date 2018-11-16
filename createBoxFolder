@@ -1,0 +1,16 @@
+#---------------------------------------------------------
+# Creates a subfolder in U of I Box based on the provided
+# parent folder ID. Returns folder ID of new folder.
+# Requires:   boxsdk, boxsdk[jwt]
+#             configured Box Client, new folder name, parent folder ID
+#---------------------------------------------------------
+
+def createBoxFolder(myBoxClient, myBoxFolderName, myBoxParentFolderId):
+    try:
+        createMyBoxFolder = boxClient.folder(myBoxParentFolderId).create_subfolder(myBoxFolderName)
+        myBoxFolderId = int(createMyBoxFolder['id'])
+        print('=== GUEST FOLDER SUCCESSFULLY CREATED IN BOX ===')
+        return myBoxFolderId
+    except:
+        print('=== GUEST FOLDER NOT CREATED ===')
+        return False
