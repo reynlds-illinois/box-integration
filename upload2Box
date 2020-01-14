@@ -1,0 +1,11 @@
+#---------------------------------------------------------
+# upload a file to a folder on Box
+#---------------------------------------------------------
+
+def upload2Box(boxClient, boxTargetFolderId, sourceFilePath, sourceFilename):
+    '''upload a file to a folder in Box'''
+    try:
+        boxClient.folder(boxTargetFolderId).upload(sourceFilePath, sourceFilename)
+        return True
+    except:
+        return False
