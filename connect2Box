@@ -1,0 +1,14 @@
+#---------------------------------------------------------
+# create an initial connection to Box using the REST API
+# requires:  from boxsdk import JWTAuth, Client
+#---------------------------------------------------------
+
+def connect2Box(boxJwtAuthFile='/services/ic-tools/config/83165_6no30ljy_config.json'):
+    '''create a connection to Box using JWTAuth file'''
+    from boxsdk import JWTAuth, Client
+    try:
+        boxAuth = JWTAuth.from_settings_file(boxJwtAuthFile)
+        boxClient = Client(boxAuth)
+        return boxClient
+    except:
+        return False
