@@ -3,7 +3,7 @@
 # requires:  from boxsdk import JWTAuth, Client
 #---------------------------------------------------------
 
-def connect2Box(boxJwtAuthFile='/services/ic-tools/config/83165_6no30ljy_config.json'):
+def connect2Box(boxJwtAuthFile='/path/to/my/jwt_config_file.json'):
     '''create a connection to Box using JWTAuth file'''
     from boxsdk import JWTAuth, Client
     try:
